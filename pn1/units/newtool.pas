@@ -4,18 +4,20 @@
  * Purpose  : Form used for configuring tools and other items
  * 			  throughout Programmers Notepad.
  * Author   : Simon Steele
- * Copyright: This Source Code is Copyright © 1998-2000 Echo
+ * Copyright: This Source Code is Copyright Â© 1998-2000 Echo
  *            Software and Simon Steele. Please read the license 
  *	      agreement at www.pnotepad.org/press/psidx.html.
  **************************************************************}
 
 unit newtool;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  StdCtrls, BrowseDr, ExtCtrls, AgOpenDialog, hotkey;
+  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  StdCtrls, {BrowseDr,} ExtCtrls, {AgOpenDialog,} hotkey;
 
 type
   TfrmNewToolLink = class(TForm)
@@ -63,7 +65,7 @@ implementation
 
 uses options;
 
-{$R *.DFM}
+{$R *.lfm}
 
 procedure TfrmNewToolLink.btnChooseClick(Sender: TObject);
 begin

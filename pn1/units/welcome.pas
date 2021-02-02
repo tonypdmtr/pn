@@ -3,16 +3,18 @@
  * Unit Name: welcome
  * Purpose  : First-Run Dialog.
  * Author   : Simon Steele
- * Copyright: This Source Code is Copyright © 1998-2000 Echo
+ * Copyright: This Source Code is Copyright Â© 1998-2000 Echo
  *            Software and Simon Steele. Please read the license 
  *			  agreement at www.pnotepad.org/press/psidx.html.
  **************************************************************}
 unit welcome;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   StdCtrls, ExtCtrls;
 
 type
@@ -36,6 +38,6 @@ var
 
 implementation
 
-{$R *.DFM}
+{$R *.lfm}
 
 end.

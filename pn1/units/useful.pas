@@ -4,7 +4,7 @@
 {******************************************************************************}
 { the Useful unit by Echo Software                                             }
 { Version 1.1.8.4   (9/03/00)                                                  }
-{ Copyright: This Source Code is Copyright © 1998-2000 Echo					           }
+{ Copyright: This Source Code is Copyright Â© 1998-2000 Echo					           }
 {            Software and Simon Steele.	   	 		   						                 }
 {                                                                              }
 { Changes:                                                                     }
@@ -69,9 +69,11 @@
 
 unit useful;
 
+{$MODE Delphi}
+
 interface
 
-uses Windows, Dialogs, Controls, Registry, Forms, Printers, SysUtils;
+uses LCLIntf, LCLType, LMessages, Dialogs, Controls, Registry, Forms, Printers, SysUtils;
 
 function GetFileInformation( const FileName, Value : String ): String;
          {Usage:

@@ -1,0 +1,286 @@
+object frmGrepSearch: TfrmGrepSearch
+  Left = 226
+  Top = 409
+  ActiveControl = cbText
+  BorderStyle = bsDialog
+  Caption = 'Find in Files'
+  ClientHeight = 313
+  ClientWidth = 345
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  KeyPreview = True
+  Position = poScreenCenter
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  OnShow = FormShow
+  PixelsPerInch = 96
+  object lblFind: TLabel
+    Left = 6
+    Top = 8
+    Width = 67
+    Height = 17
+    Alignment = taRightJustify
+    AutoSize = False
+    Caption = 'Text to find:'
+  end
+  object Label1: TLabel
+    Left = 8
+    Top = 261
+    Width = 332
+    Height = 14
+    Anchors = [akLeft, akTop, akRight]
+    AutoSize = False
+    Caption = ' Powered by the GExperts Grep Engine'
+    Color = clHighlight
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clHighlightText
+    Font.Height = -12
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentColor = False
+    ParentFont = False
+  end
+  object gbxOptions: TGroupBox
+    Left = 8
+    Top = 40
+    Width = 161
+    Height = 113
+    Caption = 'Options'
+    TabOrder = 1
+    object chkNoCase: TCheckBox
+      Left = 6
+      Top = 5
+      Width = 140
+      Height = 17
+      Caption = '&Case sensitive'
+      TabOrder = 0
+    end
+    object chkNoComments: TCheckBox
+      Left = 6
+      Top = 23
+      Width = 140
+      Height = 17
+      Caption = '&Ignore comments'
+      TabOrder = 1
+    end
+    object chkWholeWord: TCheckBox
+      Left = 6
+      Top = 41
+      Width = 140
+      Height = 17
+      Caption = '&Whole word'
+      TabOrder = 2
+    end
+    object chkRegEx: TCheckBox
+      Left = 6
+      Top = 60
+      Width = 140
+      Height = 17
+      Caption = 'Regular e&xpression'
+      TabOrder = 3
+    end
+    object chkGrepANSI: TCheckBox
+      Left = 6
+      Top = 78
+      Width = 139
+      Height = 17
+      Caption = '&ANSI compatible Search'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 4
+    end
+  end
+  object gbxWhere: TGroupBox
+    Left = 176
+    Top = 40
+    Width = 161
+    Height = 113
+    Caption = 'Where'
+    TabOrder = 2
+    object rbAllFiles: TRadioButton
+      Left = 6
+      Top = 74
+      Width = 145
+      Height = 17
+      Caption = 'All files in &project'
+      Enabled = False
+      TabOrder = 1
+      Visible = False
+      OnClick = rbDirectoriesClick
+    end
+    object rbOpenFiles: TRadioButton
+      Left = 6
+      Top = 28
+      Width = 145
+      Height = 17
+      Caption = 'All open files'
+      Checked = True
+      TabOrder = 2
+      TabStop = True
+      OnClick = rbDirectoriesClick
+    end
+    object rbDirectories: TRadioButton
+      Left = 6
+      Top = 50
+      Width = 144
+      Height = 17
+      Caption = 'Search in &directories'
+      TabOrder = 3
+      OnClick = rbDirectoriesClick
+    end
+    object rbCurrentOnly: TRadioButton
+      Left = 6
+      Top = 6
+      Width = 145
+      Height = 17
+      Caption = 'Current &file only'
+      TabOrder = 0
+      OnClick = rbDirectoriesClick
+    end
+  end
+  object gbxDirectories: TGroupBox
+    Left = 8
+    Top = 160
+    Width = 329
+    Height = 97
+    Caption = 'Search Directory Options'
+    TabOrder = 3
+    object lblDirectory: TLabel
+      Left = 6
+      Top = 8
+      Width = 45
+      Height = 13
+      Caption = 'Di&rectory:'
+    end
+    object lblMasks: TLabel
+      Left = 6
+      Top = 42
+      Width = 52
+      Height = 13
+      Caption = 'File mas&ks:'
+      FocusControl = cbMasks
+    end
+    object cbMasks: TComboBox
+      Left = 70
+      Top = 38
+      Width = 217
+      Height = 21
+      ItemHeight = 13
+      TabOrder = 2
+    end
+    object chkInclude: TCheckBox
+      Left = 70
+      Top = 60
+      Width = 177
+      Height = 17
+      Caption = 'Include su&bdirectories'
+      TabOrder = 3
+    end
+    object btnBrowse: TButton
+      Left = 294
+      Top = 10
+      Width = 21
+      Height = 21
+      Caption = '...'
+      TabOrder = 1
+      OnClick = btnBrowseClick
+    end
+    object cbDirectory: tEchoComboBox
+      Left = 70
+      Top = 10
+      Width = 217
+      Height = 21
+      Flat = False
+      DropDownWidth = 217
+      ItemHeight = 13
+      HorizontalExtent = 0
+      TabOrder = 0
+      RegistryKey = 'Software\Echo Software\PN\MRU\GrepDir'
+      SaveMax = 10
+      TextCompletion = True
+      UseRegistry = True
+    end
+  end
+  object btnOK: TButton
+    Left = 168
+    Top = 280
+    Width = 81
+    Height = 25
+    Caption = 'OK'
+    Default = True
+    ModalResult = 1
+    TabOrder = 4
+    OnClick = btnOKClick
+  end
+  object btnCancel: TButton
+    Left = 256
+    Top = 280
+    Width = 81
+    Height = 25
+    Cancel = True
+    Caption = 'Cancel'
+    ModalResult = 2
+    TabOrder = 5
+  end
+  object btnHelp: TButton
+    Left = 8
+    Top = 280
+    Width = 81
+    Height = 25
+    Caption = '&Help'
+    TabOrder = 6
+  end
+  object cbText: tEchoComboBox
+    Left = 80
+    Top = 8
+    Width = 257
+    Height = 21
+    Flat = False
+    DropDownWidth = 257
+    ItemHeight = 13
+    HorizontalExtent = 0
+    Sorted = True
+    TabOrder = 0
+    RegistryKey = 'Software\Echo Software\PN\MRU\GrepText'
+    SaveMax = 10
+    TextCompletion = True
+    UseRegistry = True
+  end
+  object FormStorage: TFormStorage
+    IniFileName = 'Software\Echo Software\PN'
+    IniSection = 'FindInFiles'
+    UseRegistry = True
+    StoredProps.Strings = (
+      'rbAllFiles.Checked'
+      'rbCurrentOnly.Checked'
+      'rbDirectories.Checked'
+      'rbOpenFiles.Checked'
+      'chkRegEx.Checked'
+      'chkGrepANSI.Checked'
+      'chkInclude.Checked'
+      'chkNoCase.Checked'
+      'chkNoComments.Checked'
+      'cbMasks.Text'
+      'chkWholeWord.Checked'
+      'cbDirectory.Text'
+    )
+    StoredValues = <>
+    Left = 6
+    Top = 279
+  end
+  object dlgBrowse: TdfsBrowseDirectoryDlg
+    Title = 'Choose a starting directory...'
+    Caption = 'Directory'
+    ShowSelectionInStatus = True
+    Left = 40
+    Top = 280
+  end
+end

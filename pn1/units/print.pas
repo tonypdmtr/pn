@@ -6,7 +6,7 @@
  *
  * Author   : Simon Steele
  *
- * Copyright: This Source Code is Copyright © 1998-2000 Echo
+ * Copyright: This Source Code is Copyright Â© 1998-2000 Echo
  *            Software and Simon Steele. Please read the license 
  *			  agreement at www.pnotepad.org/press/psidx.html.
  *
@@ -17,11 +17,13 @@
 
 unit print;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  StdCtrls, SyntaxEd, Registry, ComCtrls, FontComboBox;
+  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  StdCtrls, {SyntaxEd,} Registry, ComCtrls{, FontComboBox};
 
 type
   TfrmPrint = class(TForm)
@@ -60,7 +62,7 @@ const
 
 implementation
 
-{$R *.DFM}
+{$R *.lfm}
 
 uses Main, Editor, pntypes;
 

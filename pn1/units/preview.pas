@@ -3,18 +3,20 @@
  * Unit Name: preview
  * Purpose  : HTML Previewer - uses Internet Explorer Control.
  * Author   : Simon Steele
- * Copyright: This Source Code is Copyright © 1998-2000 Echo
+ * Copyright: This Source Code is Copyright Â© 1998-2000 Echo
  *            Software and Simon Steele. Please read the license 
  *			  agreement at www.pnotepad.org/press/psidx.html.
  **************************************************************}
 unit preview;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  Buttons, ExtCtrls, SHDocVw, ComCtrls, TB97Tlbr, TB97Ctls,
-  TB97, ActnList, OleCtrls, MOZILLACONTROLLib_TLB, Menus, ImgList, Registry;
+  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  Buttons, ExtCtrls, {SHDocVw,} ComCtrls, {TB97Tlbr, TB97Ctls,
+  TB97,} ActnList, {OleCtrls, MOZILLACONTROLLib_TLB,} Menus, ImgList, Registry;
 
 type
   TPreviewState = (usingIE, usingMozilla);
@@ -87,7 +89,7 @@ const navOpenInNewWindow = 1;
 
 implementation
 
-{$R *.DFM}
+{$R *.lfm}
 uses Main, Editor, useful;
 
 procedure TfrmPreview.WebStatus(Sender: TObject; const Text: WideString);

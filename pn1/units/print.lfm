@@ -1,0 +1,214 @@
+object frmPrint: TfrmPrint
+  Left = 280
+  Top = 219
+  BorderStyle = bsDialog
+  Caption = 'Print Settings'
+  ClientHeight = 233
+  ClientWidth = 344
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  Position = poScreenCenter
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  PixelsPerInch = 96
+  object GroupBox1: TGroupBox
+    Left = 8
+    Top = 8
+    Width = 225
+    Height = 57
+    Caption = 'Print Font'
+    TabOrder = 0
+    object FontComboBox1: TFontComboBox
+      Left = 6
+      Top = 10
+      Width = 129
+      Height = 22
+      DropDownCount = 16
+      Items.Strings = (
+        'Arial'
+        'Arial Black'
+        'Arial Narrow'
+        'Book Antiqua'
+        'Bookman Old Style'
+        'Century Gothic'
+        'Comic Sans MS'
+        'Courier'
+        'Courier New'
+        'Estrangelo Edessa'
+        'Fixedsys'
+        'Franklin Gothic Medium'
+        'Garamond'
+        'Gautami'
+        'Georgia'
+        'Haettenschweiler'
+        'Impact'
+        'Latha'
+        'Lucida Console'
+        'Lucida Sans Unicode'
+        'Mangal'
+        'Marlett'
+        'Microsoft Sans Serif'
+        'Modern'
+        'Monotype Corsiva'
+        'MS Outlook'
+        'MS Sans Serif'
+        'MS Serif'
+        'MV Boli'
+        'Palatino Linotype'
+        'Raavi'
+        'Roman'
+        'SAS Monospace'
+        'SAS Monospace Bold'
+        'Sasfont'
+        'Script'
+        'Shruti'
+        'Small Fonts'
+        'Sydnie'
+        'Sylfaen'
+        'Symbol'
+        'System'
+        'Tahoma'
+        'Terminal'
+        'Times New Roman'
+        'Trebuchet MS'
+        'Tunga'
+        'Verdana'
+        'VisualUI'
+        'Webdings'
+        'Wingdings'
+        'Wingdings 2'
+        'Wingdings 3'
+        'WST_Czec'
+        'WST_Engl'
+        'WST_Fren'
+        'WST_Germ'
+        'WST_Ital'
+        'WST_Span'
+        'WST_Swed'
+      )
+      TabOrder = 0
+      TTonly = False
+      UseItemFont = False
+      UpdateAllForms = False
+    end
+    object txtFontSize: TEdit
+      Left = 142
+      Top = 10
+      Width = 57
+      Height = 21
+      TabOrder = 1
+      Text = '10'
+    end
+    object updFontSize: TUpDown
+      Left = 199
+      Top = 10
+      Width = 16
+      Height = 21
+      Associate = txtFontSize
+      Min = 0
+      Position = 10
+      TabOrder = 2
+      Wrap = False
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 8
+    Top = 72
+    Width = 225
+    Height = 153
+    Caption = 'Options'
+    TabOrder = 1
+    object cblineno: TCheckBox
+      Left = 6
+      Top = 26
+      Width = 177
+      Height = 17
+      Caption = 'Print line numbers'
+      TabOrder = 0
+    end
+    object cbfilename: TCheckBox
+      Left = 6
+      Top = 42
+      Width = 185
+      Height = 17
+      Caption = 'Print file name in header'
+      TabOrder = 1
+    end
+    object cbdatetime: TCheckBox
+      Left = 6
+      Top = 58
+      Width = 185
+      Height = 17
+      Caption = 'Print date/time in header'
+      TabOrder = 2
+    end
+    object cbwordwrap: TCheckBox
+      Left = 6
+      Top = 74
+      Width = 177
+      Height = 17
+      Caption = 'Word wrap long lines'
+      TabOrder = 3
+    end
+    object cbpageno: TCheckBox
+      Left = 6
+      Top = 106
+      Width = 177
+      Height = 17
+      Caption = 'Print page numbers'
+      TabOrder = 4
+    end
+    object chkHideBGColours: TCheckBox
+      Left = 6
+      Top = 90
+      Width = 185
+      Height = 17
+      Caption = 'Hide background colours'
+      Checked = True
+      State = cbChecked
+      TabOrder = 5
+    end
+    object chkColour: TCheckBox
+      Left = 6
+      Top = 10
+      Width = 161
+      Height = 17
+      Caption = 'Print in colour'
+      TabOrder = 6
+    end
+  end
+  object btnOK: TButton
+    Left = 256
+    Top = 8
+    Width = 83
+    Height = 25
+    Caption = '&OK'
+    Default = True
+    ModalResult = 1
+    TabOrder = 2
+    OnClick = btnOKClick
+  end
+  object btnCancel: TButton
+    Left = 256
+    Top = 40
+    Width = 83
+    Height = 25
+    Cancel = True
+    Caption = '&Cancel'
+    ModalResult = 2
+    TabOrder = 3
+  end
+  object btnPrintSetup: TButton
+    Left = 256
+    Top = 104
+    Width = 81
+    Height = 25
+    Caption = 'Print &Setup'
+    TabOrder = 4
+    OnClick = btnPrintSetupClick
+  end
+end

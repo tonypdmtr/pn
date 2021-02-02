@@ -7,7 +7,7 @@
  *
  * Author   : Simon Steele
  *
- * Copyright: This Source Code is Copyright © 1998-2000 Echo
+ * Copyright: This Source Code is Copyright Â© 1998-2000 Echo
  *            Software and Simon Steele. Please read the license 
  *			  agreement atwww.pnotepad.org/press/psidx.html 
  * History  : 22/07/1999 First Implementation. Very bare. Performed First
@@ -31,9 +31,11 @@
 
 unit plgiface;
 
+{$MODE Delphi}
+
 interface
 
-uses sysutils, classes, Windows, menus, dialogs;
+uses sysutils, classes, LCLIntf, LCLType, LMessages, menus, dialogs;
 
 {$IFDEF plugin}
   function SaveFileA : Boolean; stdcall;

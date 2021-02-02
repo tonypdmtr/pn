@@ -3,20 +3,22 @@
  * Unit Name: genfuncs
  * Purpose  : General Functions used mainly from Options...
  * Author   : Simon Steele
- * Copyright: This Source Code is Copyright © 1998-2000 Echo
+ * Copyright: This Source Code is Copyright Â© 1998-2000 Echo
  *            Software and Simon Steele. Please read the license 
  *			  agreement at www.pnotepad.org/press/psidx.html.
  **************************************************************}
  
 unit genfuncs;
 
+{$MODE Delphi}
+
 interface
 
 {.$define debug}
 
-uses Classes, Forms, Windows, Registry, SysUtils, Clipbrd,
+uses Classes, Forms, LCLIntf, LCLType, LMessages, Registry, SysUtils, Clipbrd,
      ShlObj, ActiveX, ComObj{$ifdef debug}, Dialogs{$endif}, useful,
-     ShellAPI, IniFiles;
+     IniFiles;
 
 function AlternateToLFN(alternateName: String): String;
 function LFNToAlternate(LongName: String): String;

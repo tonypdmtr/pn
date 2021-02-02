@@ -3,7 +3,7 @@
  * Unit Name: parserrepos
  * Purpose  : Repository for tSyntaxMemo Parsers
  * Author   : Simon Steele
- * Copyright: This Source Code is Copyright © 1998-2000 Echo
+ * Copyright: This Source Code is Copyright Â© 1998-2000 Echo
  *            Software and Simon Steele. Please read the license 
  *			  agreement at www.pnotepad.org/press/psidx.html.
  * History  : 20/10/1999 Created the object (made from a form).
@@ -23,12 +23,14 @@
 
 unit parserrepos;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  SyntaxEd, SynParse, IniFiles, Registry, SYM_TSMOpt,
-  SYMOptPE;
+  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  {SyntaxEd, SynParse,} IniFiles, Registry{, SYM_TSMOpt,
+  SYMOptPE};
 
 type
   TParsers = class(TForm)
@@ -64,7 +66,7 @@ var
 
 implementation
 
-{$R *.DFM}
+{$R *.lfm}
 
 uses main, pntypes;
 

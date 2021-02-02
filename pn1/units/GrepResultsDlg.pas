@@ -17,12 +17,14 @@
 
 unit GrepResultsDlg;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   StdCtrls, ExtCtrls, SearchFile, ComCtrls, {AppUtils,} Registry,
-  DropSource, ActnList, ImgList, TB97Tlbr, TB97Ctls, TB97, Menus
+  {DropSource,} ActnList, ImgList, {TB97Tlbr, TB97Ctls, TB97,} Menus
   {, vgNLS};
 
 type
@@ -183,12 +185,11 @@ procedure LoadFont(Reg: TRegistry; Font: TFont);
 
 implementation
 
-{$R *.DFM}
+{$R *.lfm}
 
 uses
   GrepSearchDlg,
-  main, editor,
-  ShellAPI;
+  main, editor;
 
 procedure SaveFont(Reg: TRegistry; Font: TFont);
 begin

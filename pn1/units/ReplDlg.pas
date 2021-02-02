@@ -3,18 +3,20 @@
  * Unit Name: repldlg
  * Purpose  : Replace Dialog
  * Author   : David Brock, mods by Simon Steele
- * Copyright: This Source Code is Copyright © 1998-2000 Echo
+ * Copyright: This Source Code is Copyright Â© 1998-2000 Echo
  *            Software and Simon Steele. Portions by David Brock
  *			  Please read the license agreement at 
  *			  www.pnotepad.org/press/psidx.html.
  **************************************************************}
 unit ReplDlg;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  StdCtrls, ExtCtrls, SyntaxEd;
+  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  StdCtrls, ExtCtrls{, SyntaxEd};
 
 type
   TfrmReplace = class(TForm)
@@ -68,7 +70,7 @@ var
 
 implementation
 
-{$R *.DFM}
+{$R *.lfm}
 
 uses main, editor;
 

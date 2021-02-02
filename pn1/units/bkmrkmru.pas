@@ -6,7 +6,7 @@
  *
  * Author   : Simon Steele
  *
- * Copyright: This Source Code is Copyright © 1998-2000 Echo
+ * Copyright: This Source Code is Copyright Â© 1998-2000 Echo
  *            Software and Simon Steele. Please read the license 
  *			  agreement at www.pnotepad.org/press/psidx.html.
  * 
@@ -23,9 +23,11 @@
 
 unit bkmrkmru;
 
+{$MODE Delphi}
+
 interface
 
-uses Classes, SyntaxEd, INIFiles, SysUtils, useful;
+uses Classes, {SyntaxEd,} INIFiles, SysUtils, useful;
 
    type tBookmarkMRU = class(TObject)
    private

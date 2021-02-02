@@ -3,17 +3,19 @@
  * Unit Name: about
  * Purpose  : About Window
  * Author   : Simon Steele
- * Copyright: This Source Code is Copyright © 1998-2000 Echo
+ * Copyright: This Source Code is Copyright Â© 1998-2000 Echo
  *            Software and Simon Steele. Please read the license 
  *			  agreement at www.pnotepad.org/press/psidx.html.
  **************************************************************}
 
 unit about;
 
+{$MODE Delphi}
+
 interface
 
-uses Windows, SysUtils, Classes, Graphics, Forms, Controls, StdCtrls,
-  Buttons, ExtCtrls, UrlLabel, ComCtrls;
+uses LCLIntf, LCLType, LMessages, SysUtils, Classes, Graphics, Forms, Controls, StdCtrls,
+  Buttons, ExtCtrls, {UrlLabel,} ComCtrls;
 
 type
   TfrmAbout = class(TForm)
@@ -42,7 +44,7 @@ var
 
 implementation
 
-{$R *.DFM}
+{$R *.lfm}
 
 uses useful;
 

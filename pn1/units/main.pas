@@ -3,7 +3,7 @@
  * Unit Name: main
  * Purpose  : SMDI MDI Parent
  * Author   : Simon Steele
- * Copyright: This Source Code is Copyright © 1998-2000 Echo
+ * Copyright: This Source Code is Copyright Â© 1998-2000 Echo
  *            Software and Simon Steele.
  * History  : 19/11/2000 Having released Beta 14, begin work on Beta 15. Removed
  *                       bloated stringlist based plugin management code and
@@ -102,6 +102,8 @@
 
 unit main;
 
+{$MODE Delphi}
+
 { TODO -oSimon -cScheme Functionality : Allow reset of colour schemes... }
 { TODO -oSimon -cVisual : Clear StatusBar when all files closed }
 
@@ -113,13 +115,13 @@ unit main;
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  ComCtrls, ToolWin, ExtCtrls, ImgList, Menus, ActnList, WebFileInfo,
-  MRUFList, editor, SyntaxEd, SynParse, Registry, ShellAPI, StdActns,
-  pntypes, Logwiz, pndefs, HexEditor, plgiface, TB97, TB97Tlwn, bkmrkmru,
-  parserrepos, shlobj, TB97Tlbr, TB97Ctls, EnhCBox, INIFiles,
-  StdCtrls, AgOpenDialog, Buttons, Options, GrepResultsDlg,
-  FindDlg, ReplDlg, helper, hh, hh_funcs;
+  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  ComCtrls, ToolWin, ExtCtrls, ImgList, Menus, ActnList, {WebFileInfo,
+  MRUFList,} editor, {SyntaxEd, SynParse,} Registry, StdActns,
+  pntypes, {Logwiz,} pndefs, {HexEditor,} plgiface, {TB97, TB97Tlwn,} bkmrkmru,
+  parserrepos, shlobj, {TB97Tlbr, TB97Ctls, EnhCBox,} INIFiles,
+  StdCtrls, {AgOpenDialog,} Buttons, Options, GrepResultsDlg,
+  FindDlg, ReplDlg, helper, hh, hh_funcs, PrintersDlgs;
 
 type
   TfrmMain = class(TForm)
@@ -809,7 +811,7 @@ type
                   EndPos     : TXYRef;
                 end;
 
-{$R *.DFM}
+{$R *.lfm}
 
 procedure TfrmMain.actNewExecute(Sender: TObject);
 begin
@@ -4164,7 +4166,7 @@ end;
 
 procedure TfrmMain.URL(urlstr: string);
 begin
-   ShellExecute(GetDesktopWindow(), 'open', PChar(urlstr), nil, nil, SW_SHOWNORMAL);
+    OpenDocument(PChar(urlstr)); { *Converted from ShellExecute* }
 end;
 
 function TfrmMain.GetSetting(fname, key : string; default : boolean) : Boolean;
@@ -4565,7 +4567,7 @@ begin
     if Length(fdr) < 1 then fdr := ExtractFilePath(ParamStr(0));
 
     If AskParms then doit := ParseInData(pdtExtraParms, par);
-    if doit then ShellExecute(Handle, PChar('open'), PChar(cmd), PChar(par), PChar(fdr), SW_SHOW);
+    if doit then  OpenDocument(PChar(cmd)); { *Converted from ShellExecute* }
   end else
     SetStatus('Note: Tool not launched because no files are open...');
 end;

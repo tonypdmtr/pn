@@ -3,7 +3,7 @@
  * Unit Name: helper
  * Purpose  : Floating Helper Form... Projects & Text-Clips...
  * Author   : Simon Steele - Echo Software
- * Copyright: This Source Code is Copyright © 1998-2000 Echo
+ * Copyright: This Source Code is Copyright Â© 1998-2000 Echo
  *            Software and Simon Steele. Please read the license 
  *			      agreement at www.pnotepad.org/press/psidx.html.
  * History  : 22/09/2000 - Creation - Notebook and Tabs plus Projects tree.
@@ -38,12 +38,14 @@
 
 unit helper;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  ToolWin, ComCtrls, ExtCtrls, Menus, IniFiles, AgOpenDialog, ImgList, Registry,
-  Shellapi, StdCtrls, EnhCBox, ActnList, TB97Ctls, BrowseDr, CommCtrl;
+  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  ToolWin, ComCtrls, ExtCtrls, Menus, IniFiles, {AgOpenDialog,} ImgList, Registry,
+  StdCtrls, {EnhCBox,} ActnList, {TB97Ctls, BrowseDr,} CommCtrl;
 
 type
   TfrmHelper = class(TForm)
@@ -199,7 +201,7 @@ var
 
 implementation
 
-{$R *.DFM}
+{$R *.lfm}
 
 { TfrmHelper }
 

@@ -24,10 +24,12 @@
 }
 unit hh_funcs;
 
+{$MODE Delphi}
+
 interface
 
-uses Windows,   //This line will not compile under Delphi 1 -- D1 is not supported
-     SysUtils, Classes, Forms, Dialogs, ShellApi, Registry, FileCtrl;
+uses LCLIntf, LCLType, LMessages,   //This line will not compile under Delphi 1 -- D1 is not supported
+     SysUtils, Classes, Forms, Dialogs, Registry, FileCtrl;
 
 
 { >> Create conditional symbols.
@@ -1227,7 +1229,7 @@ begin
   else
     handle := 0;
 
-  h := ShellExecute(handle, 'open', Pchar(aFilename), Pchar(aParams), nil, SW_SHOWDEFAULT);
+  h :=  OpenDocument(Pchar(aFilename)); { *Converted from ShellExecute* }
   result := (h > 32);  //success?
   if NOT result then
     ReportError('Function ShellExecute(%s)' + #13

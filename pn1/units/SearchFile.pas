@@ -11,6 +11,8 @@
 
 unit SearchFile;
 
+{$MODE Delphi}
+
 //! StH: This unit has been completely prepared for localization
 //! StH: This unit is fully compatible with C++Builder
 
@@ -25,7 +27,7 @@ interface
 {$ENDIF VER110}
 
 uses
-  Windows, SysUtils, Classes, Dialogs;
+  LCLIntf, LCLType, LMessages, SysUtils, Classes, Dialogs;
 
 type
 

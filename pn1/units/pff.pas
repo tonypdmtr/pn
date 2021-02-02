@@ -1,11 +1,14 @@
  unit pff;
+
+{$MODE Delphi}
+
 {This unit has no procedures or functions because it is a modal form... All of
  the code is processed in the main form which waits for this form to close.}
 
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   StdCtrls, ExtCtrls, ComCtrls;
 
 type
@@ -13,7 +16,7 @@ type
     Panel1: TPanel;
     Button1: TButton;
     Button2: TButton;
-    memPFF: TRichEdit;
+    memPFF: TMemo;
   private
     { Private declarations }
   public
@@ -25,6 +28,6 @@ var
 
 implementation
 
-{$R *.DFM}
+{$R *.lfm}
 
 end.

@@ -3,11 +3,13 @@
  * Unit Name: options
  * Purpose  : Programmers Notepad Options
  * Author   : Simon Steele
- * Copyright: This Source Code is Copyright © 1998-2000 Echo
+ * Copyright: This Source Code is Copyright Â© 1998-2000 Echo
  *            Software and Simon Steele. Please read the license
  *			  agreement at www.pnotepad.org/press/psidx.html.
  **************************************************************}
 unit options;
+
+{$MODE Delphi}
 
 interface
 
@@ -15,10 +17,10 @@ interface
 {$DEFINE parsers}
 
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   StdCtrls, ComCtrls,Registry, ExtCtrls, Menus, CheckLst,
-  Buttons, useful, ImgList, pntypes, UrlLabel, EnhListView, synParse, IniFiles,
-  BrowseDr, ColorPickerButton, hotkey, ActnList, commctrl, FontComboBox;
+  Buttons, useful, ImgList, pntypes, {UrlLabel, EnhListView, synParse,} IniFiles,
+  {BrowseDr, ColorPickerButton,} hotkey, ActnList, commctrl{, FontComboBox};
 
 Type TConfigInfo=class(TComponent)
   private
@@ -391,7 +393,7 @@ implementation
 
 uses newtool, Main, genfuncs, pndefs;
 
-{$R *.DFM}
+{$R *.lfm}
 
 Constructor TConfigInfo.Create(AOwner: TComponent);
 Begin

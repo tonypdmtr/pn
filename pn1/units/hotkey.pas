@@ -3,7 +3,7 @@
  * Unit Name: HotKey
  * Purpose  : Edit component for inputting keyboard shortcuts.
  * Author   : David Brock & Simon Steele
- * Copyright: This Source Code is Copyright © 1998-2000 Echo
+ * Copyright: This Source Code is Copyright Â© 1998-2000 Echo
  *            Software and Simon Steele. Portions Copyright David
  *			      Brock. Please read the license agreement at
  *			      www.pnotepad.org/press/psidx.html.
@@ -12,9 +12,11 @@
 
 unit HotKey;
 
+{$MODE Delphi}
+
 interface
 
-uses stdctrls, classes, messages, menus, windows;
+uses stdctrls, classes, messages, menus, LCLIntf, LCLType, LMessages;
 
 type
   tEchoHotKey = class(TCustomEdit)

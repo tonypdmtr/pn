@@ -32,10 +32,12 @@
 
 unit hh;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  Windows,   //This line will not compile under Delphi 1 -- D1 is not supported
+  LCLIntf, LCLType, LMessages,   //This line will not compile under Delphi 1 -- D1 is not supported
   SysUtils,
   Registry;
 

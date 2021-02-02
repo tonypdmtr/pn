@@ -1,0 +1,59 @@
+object frmPFF: TfrmPFF
+  Left = 245
+  Top = 259
+  Width = 397
+  Height = 248
+  BorderIcons = [biSystemMenu]
+  Caption = 'Select the required text...'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  PixelsPerInch = 96
+  object Panel1: TPanel
+    Left = 302
+    Top = 0
+    Width = 87
+    Height = 221
+    Align = alRight
+    BevelOuter = bvNone
+    TabOrder = 0
+    object Button1: TButton
+      Left = 6
+      Top = 6
+      Width = 73
+      Height = 25
+      Caption = '&OK'
+      Default = True
+      ModalResult = 1
+      TabOrder = 0
+    end
+    object Button2: TButton
+      Left = 6
+      Top = 38
+      Width = 73
+      Height = 25
+      Caption = 'Cancel'
+      ModalResult = 2
+      TabOrder = 1
+    end
+  end
+  object memPFF: TMemo
+    Left = 0
+    Top = 0
+    Width = 302
+    Height = 221
+    Align = alClient
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Courier New'
+    Font.Style = []
+    ParentFont = False
+    ScrollBars = ssBoth
+    TabOrder = 1
+    WordWrap = False
+  end
+end

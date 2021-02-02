@@ -13,15 +13,21 @@
 
 unit GrepSearchDlg;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  Registry, GrepResultsDlg, Editor, Main, Mask, pntypes,
-  BrowseDr, EnhCBox, echocombo, StdCtrls{, vgNLS , Placemnt};
+  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  Registry, GrepResultsDlg, Editor, Main, MaskEdit, pntypes,
+  {BrowseDr, EnhCBox, echocombo,} StdCtrls{, vgNLS , Placemnt};
 
 type
+
+  { TfrmGrepSearch }
+
   TfrmGrepSearch = class(TForm)
+    FormStorage: TFormStorage;
     lblFind: TLabel;
     gbxOptions: TGroupBox;
     chkNoCase: TCheckBox;
@@ -66,7 +72,7 @@ type
 
 implementation
 
-{$R *.DFM}
+{$R *.lfm}
 
 uses
   Menus{, AppUtils};

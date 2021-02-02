@@ -3,7 +3,7 @@
  * Unit Name: pntypes
  * Purpose  : Various types used in Programmers Notepad
  * Author   : Simon Steele
- * Copyright: This Source Code is Copyright © 1998-2000 Echo
+ * Copyright: This Source Code is Copyright Â© 1998-2000 Echo
  *            Software and Simon Steele. Please read the license 
  *			  agreement at www.pnotepad.org/press/psidx.html.
  *			  Portions copyright GExperts.
@@ -14,11 +14,13 @@
  
 unit pntypes;
 
+{$MODE Delphi}
+
 {$Define plugin}
 
 interface
 
-uses Messages, SysUtils, Windows, comctrls, menus, Graphics;
+uses Messages, SysUtils, LCLIntf, LCLType, LMessages, comctrls, menus, Graphics;
 
 // The following declaration is necessary because of an error in
 // the declaration of BroadcastSystemMessage() in the Windows unit

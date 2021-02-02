@@ -5,16 +5,18 @@
  * 			  the output. Does not work on 16-bit programs at
  *			  the moment. Not sure why.
  * Author   : Simon Steele
- * Copyright: This Source Code is Copyright © 1998-2000 Echo
+ * Copyright: This Source Code is Copyright Â© 1998-2000 Echo
  *            Software and Simon Steele. Please read the license
  *			  agreement at www.pnotepad.org/press/psidx.html.
  **************************************************************}
 
 unit execute;
 
+{$MODE Delphi}
+
 interface
 
-uses Forms, SysUtils, Windows, Classes, Useful;
+uses Forms, SysUtils, LCLIntf, LCLType, LMessages, Classes, Useful;
 
 {.$DEFINE OLD}
 
@@ -154,8 +156,8 @@ begin
     @hOutputRead,  0, false, DUPLICATE_SAME_ACCESS);
   DuplicateHandle(GetCurrentProcess(), hInputWriteTmp, GetCurrentProcess(),
     @hInputWrite, 0, false, DUPLICATE_SAME_ACCESS);
-  CloseHandle(hOutputReadTmp);
-  CloseHandle(hInputWriteTmp);
+  FileClose(hOutputReadTmp); { *Converted from CloseHandle* }
+  FileClose(hInputWriteTmp); { *Converted from CloseHandle* }
 
   FillChar(tsi, SizeOf(TStartupInfo), 0);
   tsi.cb         := SizeOf(TStartupInfo);
@@ -174,15 +176,15 @@ begin
   begin
     FOutput := IntToStr( GetLastError() );
     msg.add('Error executing sub-program: ' + FOutput);
-    CloseHandle( hOutputWrite );
-    CloseHandle( hInputRead );
-    CloseHandle( hErrorWrite );
+    FileClose(hOutputWrite ); { *Converted from CloseHandle* }
+    FileClose(hInputRead ); { *Converted from CloseHandle* }
+    FileClose(hErrorWrite ); { *Converted from CloseHandle* }
     exit;
   end;
 
-  CloseHandle(hOutputWrite);
-  CloseHandle(hInputRead );
-  CloseHandle(hErrorWrite);
+  FileClose(hOutputWrite); { *Converted from CloseHandle* }
+  FileClose(hInputRead ); { *Converted from CloseHandle* }
+  FileClose(hErrorWrite); { *Converted from CloseHandle* }
   Application.ProcessMessages;
 
   repeat

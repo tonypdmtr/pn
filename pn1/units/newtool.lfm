@@ -1,0 +1,213 @@
+object frmNewToolLink: TfrmNewToolLink
+  Left = 335
+  Top = 329
+  ActiveControl = txtCaption
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'New Tool Link'
+  ClientHeight = 289
+  ClientWidth = 434
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  PixelsPerInch = 96
+  object lblCaption: TLabel
+    Left = 8
+    Top = 16
+    Width = 65
+    Height = 13
+    Alignment = taRightJustify
+    AutoSize = False
+    Caption = 'Caption:'
+  end
+  object lblCommand: TLabel
+    Left = 8
+    Top = 48
+    Width = 65
+    Height = 17
+    Alignment = taRightJustify
+    AutoSize = False
+    Caption = 'Command:'
+  end
+  object Label3: TLabel
+    Left = 0
+    Top = 112
+    Width = 73
+    Height = 17
+    Alignment = taRightJustify
+    AutoSize = False
+    Caption = 'Parameters:'
+  end
+  object lblDir: TLabel
+    Left = 8
+    Top = 80
+    Width = 65
+    Height = 13
+    Alignment = taRightJustify
+    AutoSize = False
+    Caption = 'Directory:'
+    Visible = False
+  end
+  object Label5: TLabel
+    Left = 8
+    Top = 144
+    Width = 65
+    Height = 17
+    Alignment = taRightJustify
+    AutoSize = False
+    Caption = 'Shortcut:'
+  end
+  object txtCaption: TEdit
+    Left = 80
+    Top = 16
+    Width = 265
+    Height = 21
+    TabOrder = 0
+    OnChange = txtCaptionChange
+  end
+  object txtCommand: TEdit
+    Left = 80
+    Top = 48
+    Width = 233
+    Height = 21
+    TabOrder = 1
+  end
+  object btnOK: TButton
+    Left = 352
+    Top = 16
+    Width = 73
+    Height = 25
+    Caption = '&OK'
+    Default = True
+    ModalResult = 1
+    TabOrder = 2
+  end
+  object btnCancel: TButton
+    Left = 352
+    Top = 48
+    Width = 73
+    Height = 25
+    Cancel = True
+    Caption = 'Cancel'
+    ModalResult = 2
+    TabOrder = 3
+  end
+  object btnChoose: TButton
+    Left = 320
+    Top = 48
+    Width = 23
+    Height = 23
+    Caption = '...'
+    TabOrder = 4
+    OnClick = btnChooseClick
+  end
+  object txtParameters: TEdit
+    Left = 80
+    Top = 112
+    Width = 265
+    Height = 21
+    TabOrder = 5
+  end
+  object txtDir: TEdit
+    Left = 80
+    Top = 80
+    Width = 233
+    Height = 21
+    TabOrder = 6
+    Visible = False
+  end
+  object btnDir: TButton
+    Left = 320
+    Top = 80
+    Width = 23
+    Height = 23
+    Caption = '...'
+    TabOrder = 7
+    Visible = False
+    OnClick = btnDirClick
+  end
+  object panHint: TPanel
+    Left = 8
+    Top = 200
+    Width = 417
+    Height = 81
+    BevelInner = bvLowered
+    Color = clInfoBk
+    TabOrder = 8
+    object Label4: TLabel
+      Left = 6
+      Top = 6
+      Width = 337
+      Height = 13
+      Caption = 'You can use the following entries in your parameters or directory entries:'
+    end
+    object Memo1: TMemo
+      Left = 38
+      Top = 22
+      Width = 361
+      Height = 49
+      BorderStyle = bsNone
+      Color = clInfoBk
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clInfoText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      Lines.Strings = (
+        '%f = Current Filename'#9'%d = Current Directory'
+        '%c = Current Column'#9'%l = Current Line'
+        '%b = Build target file for project selected as "Build Project".'
+      )
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 0
+    end
+  end
+  object chkAskParameters: TCheckBox
+    Left = 8
+    Top = 176
+    Width = 193
+    Height = 17
+    Caption = 'Ask for parameters upon execution.'
+    TabOrder = 9
+  end
+  object chkCaptureOutput: TCheckBox
+    Left = 224
+    Top = 176
+    Width = 201
+    Height = 17
+    Caption = 'Capture Output'
+    TabOrder = 10
+  end
+  object btnClearShortcut: TButton
+    Left = 320
+    Top = 144
+    Width = 23
+    Height = 23
+    Hint = 'Clear the shortcut'
+    Caption = 'c'
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 11
+    OnClick = btnClearShortcutClick
+  end
+  object dlgBrowse: TdfsBrowseDirectoryDlg
+    Title = 'Choose a directory to start the program in:'
+    Caption = 'Start Directory'
+    ShowSelectionInStatus = False
+    Left = 368
+    Top = 80
+  end
+  object dlgChoose: TAgOpenDialog
+    Filter = 'Executable Files|*.exe;*.dll;*.com;*.bat|Help Files|*.hlp|All Files|*.*'
+    Title = 'Choose a file...'
+    ShowPlacesBar = True
+    Left = 400
+    Top = 80
+  end
+end

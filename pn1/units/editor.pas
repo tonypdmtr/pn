@@ -3,7 +3,7 @@
  * Unit Name: editor
  * Purpose  : MDI Client for PN
  * Author   : Simon Steele
- * Copyright: This Source Code is Copyright © 1998-2000 Echo
+ * Copyright: This Source Code is Copyright Â© 1998-2000 Echo
  *            Software and Simon Steele. Please read the license 
  *			  agreement at www.pnotepad.org/press/psidx.html. 
  * History  : 18/04/1999 Creation of editor unit.
@@ -30,14 +30,16 @@
 
 unit editor;
 
+{$MODE Delphi}
+
 {$define parsers}
 
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  SyntaxEd, ComCtrls, ImgList, ToolWin, ActnList, genfuncs, HexEditor, StdCtrls,
-  pntypes, Printers, synParse, extctrls, Menus, Registry, Clipbrd;
+  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  {SyntaxEd,} ComCtrls, ImgList, ToolWin, ActnList, genfuncs, {HexEditor,} StdCtrls,
+  pntypes, Printers, {synParse,} extctrls, Menus, Registry, Clipbrd;
 
 type
   TfrmClient = class(TForm)
@@ -224,7 +226,7 @@ const
                        ' connection or because the network was too busy.';
 implementation
 
-{$R *.DFM}
+{$R *.lfm}
 {$R Ln.res}
 
 uses options, main, hexedprv, useful;
@@ -1027,7 +1029,7 @@ begin
          Canvas.Brush.Color := clWhite;
          Canvas.Brush.Style := bsSolid;
          Canvas.FillRect ( Rect ( 0 , 0 , Width , Height ) );
-         // nun ränder berechnen
+         // nun rÎ´nder berechnen
          HexToCanvas.GetLayout;
          HexToCanvas.TopMargin := Height div 20;
          HexToCanvas.BottomMargin := Height - (Height div 20);
@@ -1072,7 +1074,7 @@ begin
    try
       with Printer do
       begin
-         // nun ränder berechnen
+         // nun rÎ´nder berechnen
          HexToCanvas.GetLayout;
          HexToCanvas.TopMargin := PageHeight div 20;
          HexToCanvas.BottomMargin := PageHeight - (PageHeight div 20);
